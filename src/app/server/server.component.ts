@@ -8,6 +8,7 @@ export class ServerComponent {
   allowdisabledAction = false;
   serverId = 10;
   serverStatus = 'offline';
+  currentServerStatus = 'Server is offline';
   /* Getter method that returns serverStatus */
   getServerStatus() {
     return this.serverStatus;
@@ -16,6 +17,10 @@ export class ServerComponent {
     setTimeout(() => {
       this.allowdisabledAction = true;
     }, 2000);
+ }
+
+ onServerClick() {
+   this.currentServerStatus = 'Server is now online';
  }
   // tslint:disable-next-line:use-lifecycle-interface
   ngOnInit() {
