@@ -1,8 +1,10 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<!-- We are actually storing name in model attribute "name"-->
-<!-- Two way data binding is possible and dynamically content can be changed-->
-<!--<h2><p>Enter your name</p><input type="text" [(ngModel)]="name"></h2>
-<p>{{ name }}</p>-->
-<p>This is a app Component</p>
-<hr>
-<app-servers></app-servers>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <h3>I m in Blue</h3>
+    </div>
+    <!--<div app-servers>I m in pink</div>  use it as an attribute-->
+    <!--.app-server in quotes <div class="app-servers"></div> use it as a property-->
+    <app-server></app-server>
+  </div>
+</div>
