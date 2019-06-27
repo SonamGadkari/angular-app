@@ -2,5 +2,11 @@
 <p>{{'Server'}} number {{serverId}} is {{getServerStatus()}}</p>
 <button class="btn btn-primary" [disabled]="!allowdisabledAction" (click)="onServerClick()">Action
 </button>
+<!--<input type="text" (input)="onServerEvent($event)">-->
+<br>
+<br>
+<input type="text" [(ngModel)]="serverEvent">
+<br>
+<p>{{serverEvent}}</p>
 <p>{{allowdisabledAction}}</p>
 <p>{{currentServerStatus}}</p>

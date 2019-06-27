@@ -9,6 +9,7 @@ export class ServerComponent {
   serverId = 10;
   serverStatus = 'offline';
   currentServerStatus = 'Server is offline';
+  serverEvent = 'TestServer';
   /* Getter method that returns serverStatus */
   getServerStatus() {
     return this.serverStatus;
@@ -20,8 +21,14 @@ export class ServerComponent {
  }
 
  onServerClick() {
-   this.currentServerStatus = 'Server is now online';
+   this.currentServerStatus = 'Server is now online' + 'name of the server is ' + this.serverEvent;
  }
+
+ onServerEvent(event: Event) {
+  this.serverEvent = (event.target as HTMLInputElement).value;
+}
+
+
   // tslint:disable-next-line:use-lifecycle-interface
   ngOnInit() {
   }
