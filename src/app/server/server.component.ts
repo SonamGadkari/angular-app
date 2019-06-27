@@ -10,6 +10,7 @@ export class ServerComponent {
   serverStatus = 'offline';
   currentServerStatus = 'Server is offline';
   serverEvent = 'TestServer';
+  serverCreated = false;
   /* Getter method that returns serverStatus */
   getServerStatus() {
     return this.serverStatus;
@@ -21,7 +22,8 @@ export class ServerComponent {
  }
 
  onServerClick() {
-   this.currentServerStatus = 'Server is now online' + 'name of the server is ' + this.serverEvent;
+    this.serverCreated = true;
+    this.currentServerStatus = 'Server is now online' + 'name of the server is ' + this.serverEvent;
  }
 
  onServerEvent(event: Event) {

@@ -6,7 +6,11 @@
 <br>
 <br>
 <input type="text" [(ngModel)]="serverEvent">
+<p *ngIf="serverCreated; else noServer;">Server is created ,servername is {{serverEvent}}</p>
 <br>
+<ng-template #noServer>
+  <p>No server is created</p>
+</ng-template>
 <p>{{serverEvent}}</p>
 <p>{{allowdisabledAction}}</p>
 <p>{{currentServerStatus}}</p>
