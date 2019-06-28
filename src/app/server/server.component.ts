@@ -44,4 +44,13 @@ export class ServerComponent {
   // tslint:disable-next-line:use-lifecycle-interface
   ngOnInit() {
   }
+
+  onButtonClick() {
+    this.servers.push(this.serverName);
+  }
+
+  onClickDelete(inputNum: number) {
+    this.servers.splice(inputNum  , 1);
+    
+  }
 }

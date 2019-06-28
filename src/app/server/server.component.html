@@ -1,8 +1,8 @@
-<p> This is a server Component</p>
+<!--<p> This is a server Component</p>
 <p>{{'Server'}} number {{serverId}} is {{getServerStatus()}}</p>
 <button class="btn btn-primary" [disabled]="!allowdisabledAction" (click)="onServerClick()">Action
 </button>
-<!--<input type="text" (input)="onServerEvent($event)">-->
+<input type="text" (input)="onServerEvent($event)">
 <br>
 <br>
 <input type="text" [(ngModel)]="serverName">
@@ -16,5 +16,13 @@
 <p>{{serverName}}</p>
 <p>{{allowdisabledAction}}</p>
 <p>{{currentServerStatus}}</p>
-<p *ngFor ="let server of servers">serverName</p>
+<p *ngFor ="let server of servers">serverName</p> -->
+<button class="btn btn-success" (click)="onButtonClick()">Add Server</button>
+<br/>
+<br/>
+<div class="list-group">
+  <a class="list-group-item" *ngFor="let server of servers; let i=index" (click)="onClickDelete(i)" >{{server}}</a>
+</div>
+
+
 
