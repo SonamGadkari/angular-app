@@ -5,12 +5,16 @@
 <!--<input type="text" (input)="onServerEvent($event)">-->
 <br>
 <br>
-<input type="text" [(ngModel)]="serverEvent">
-<p *ngIf="serverCreated; else noServer;">Server is created ,servername is {{serverEvent}}</p>
+<input type="text" [(ngModel)]="serverName">
+<p *ngIf="serverCreated; else noServer;">Server is created ,servername is {{serverName}}</p>
 <br>
+
+<p [ngStyle]='{backgroundColor : getColor()}' [ngClass]="{online : serverStatus === 'online'}" >Sever is {{serverStatus}}</p>
 <ng-template #noServer>
   <p>No server is created</p>
 </ng-template>
-<p>{{serverEvent}}</p>
+<p>{{serverName}}</p>
 <p>{{allowdisabledAction}}</p>
 <p>{{currentServerStatus}}</p>
+<p *ngFor ="let server of servers">serverName</p>
+

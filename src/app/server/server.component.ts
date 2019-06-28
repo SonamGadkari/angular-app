@@ -1,7 +1,10 @@
 import {Component} from '@angular/core';
 @Component({
     selector: 'app-server',
-    templateUrl: './server.component.html'
+    templateUrl: './server.component.html',
+    styles: [`.online{
+      color : white;
+    }`]
 })
 
 export class ServerComponent {
@@ -9,8 +12,9 @@ export class ServerComponent {
   serverId = 10;
   serverStatus = 'offline';
   currentServerStatus = 'Server is offline';
-  serverEvent = 'TestServer';
+  serverName = 'TestServer';
   serverCreated = false;
+  servers = ['TestServer1', 'TestServer2'];
   /* Getter method that returns serverStatus */
   getServerStatus() {
     return this.serverStatus;
@@ -19,17 +23,23 @@ export class ServerComponent {
     setTimeout(() => {
       this.allowdisabledAction = true;
     }, 2000);
+
+    this.serverStatus = Math.random() > 0.5 ? 'offline' : 'online';
+ }
+
+ getColor() {
+   return this.serverStatus === 'offline' ? 'red' : 'green';
  }
 
  onServerClick() {
+    this.servers.push(this.serverName);
     this.serverCreated = true;
-    this.currentServerStatus = 'Server is now online' + 'name of the server is ' + this.serverEvent;
+    this.currentServerStatus = 'Server is now online' + 'name of the server is ' + this.serverName;
  }
 
- onServerEvent(event: Event) {
-  this.serverEvent = (event.target as HTMLInputElement).value;
+ onserverName(event: Event) {
+  this.serverName = (event.target as HTMLInputElement).value;
 }
-
 
   // tslint:disable-next-line:use-lifecycle-interface
   ngOnInit() {
